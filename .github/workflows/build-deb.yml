@@ -1,0 +1,9 @@
+name: build deb
+run-name: Github Action is building Debian Packages
+on: [push]
+jobs: 
+    build: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Environment
+              run: export 
