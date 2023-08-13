@@ -65,4 +65,7 @@ jobs:
 
             - name: clone music-hub code
               run: |
-                    git clone https://github.com/student-ice/music-hub.git
+                    git clone https://github.com/student-ice/digimusic.git
+                    cd digimusic
+                    cmake -B build
+                    cmake --build build -j $(nproc)
