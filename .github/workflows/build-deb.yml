@@ -7,10 +7,10 @@ jobs:
         steps:
             - name: Add Deepin source
               run: |
-                  echo "deb https://proposed-packages.deepin.com/beige-testing/ unstable main dde commercial community" | tee /etc/apt/sources.list.d/deepin-unstable-source.list
-                  echo "\ndeb https://community-packages.deepin.com/beige/ beige main commercial community" >> /etc/apt/sources.list
+                  sudo echo "deb https://proposed-packages.deepin.com/beige-testing/ unstable main dde commercial community" | sudo tee /etc/apt/sources.list.d/deepin-unstable-source.list
+                  sudo echo "\ndeb https://community-packages.deepin.com/beige/ beige main commercial community" >> /etc/apt/sources.list
 
             - name: Cat sources
               run: |
-                    cat /etc/apt/sources.list
-                    cat /etc/apt/sources.list.d/deepin-unstable-source.list
+                    sudo cat /etc/apt/sources.list
+                    sudo cat /etc/apt/sources.list.d/deepin-unstable-source.list
