@@ -5,6 +5,12 @@ jobs:
     build: 
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v3
+              with: 
+                    token: ${{ secrets.PRIVATE_TOKEN }}
+                    path: "digimusic"
+                    repository: student-ice/digimusic
+                
             - name: Install dependency
               run: sudo apt install libdtkwidget-dev doxygen qtmultimedia5-dev
               
@@ -63,9 +69,8 @@ jobs:
                   cd ../
                   sudo apt install ./*.deb
 
-            - name: clone music-hub code
+            - name: build digimusic
               run: |
-                    git clone https://github.com/student-ice/digimusic.git
                     cd digimusic
                     cmake -B build
                     cmake --build build -j $(nproc)
