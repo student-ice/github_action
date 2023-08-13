@@ -54,7 +54,7 @@ jobs:
 
             - name: Build and Install dtkdeclarative
               run: |
-                  git clone -b 5.6.9 https://github.com/linuxdeepin/dtkdeclarative.git
+                  git clone -b 5.6.8 https://github.com/linuxdeepin/dtkdeclarative.git
                   cd dtkdeclarative
                   sudo apt build-dep .
                   cmake -B build
