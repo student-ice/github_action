@@ -8,7 +8,7 @@ jobs:
             - name: Add Deepin source
               run: |
                   echo "deb https://proposed-packages.deepin.com/beige-testing/ unstable main dde commercial community" | sudo tee /etc/apt/sources.list.d/deepin-unstable-source.list
-                  echo "\ndeb https://community-packages.deepin.com/beige/ beige main commercial community" | sudo tee -a /etc/apt/sources.list
+                  echo "deb https://community-packages.deepin.com/beige/ beige main commercial community" | sudo tee -a /etc/apt/sources.list
 
             - name: Cat sources
               run: |
