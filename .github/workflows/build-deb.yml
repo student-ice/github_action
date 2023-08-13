@@ -11,7 +11,7 @@ jobs:
                 repository: linuxdeepin/dtkcore
             - name: Build and Install dtkcore
               run: |
-                  cd dtkcore
+                  cd $GITHUB_WORKSPACE/dtkcore
                   sudo apt build-dep .
                   cmake -B build
                   cmake --build build -j $(nproc)
