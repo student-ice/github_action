@@ -9,14 +9,14 @@ jobs:
               run: |
                   echo "deb https://proposed-packages.deepin.com/beige-testing/ unstable main dde commercial community" | sudo tee /etc/apt/sources.list.d/deepin-unstable-source.list
                   echo "deb https://community-packages.deepin.com/beige/ beige main commercial community" | sudo tee -a /etc/apt/sources.list
-
-            - name: Cat sources
-              run: |
-                    sudo cat /etc/apt/sources.list
-                    sudo cat /etc/apt/sources.list.d/deepin-unstable-source.list
-
+            
             - name: Update System
               run: |
                   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 425956BB3E31DF51
                   sudo apt update
-                  sudo apt install libdtkcore-dev
+            - name: Installation dependency
+              run: |
+                  sudo apt install debhelper-compat pkg-config qttools5-dev-tools \ 
+                  qtbase5-private-dev doxygen libgsettings-qt-dev libgtest-dev \
+                  libdtkcommon-dev cmake libuchardet-dev libicu-dev libsystemd-dev \
+                  libdtkgui-dev libdtkwidget-dev libdtkdeclarative-dev clang qtmultimedia5-dev
