@@ -16,7 +16,7 @@ jobs:
                   sudo apt update
             - name: Installation dependency
               run: |
-                  sudo apt install debhelper pkg-config qttools5-dev-tools \ 
+                  sudo apt install pkg-config qttools5-dev-tools \ 
                   qtbase5-private-dev doxygen libgsettings-qt-dev libgtest-dev \
                   libdtkcommon-dev cmake libuchardet-dev libicu-dev libsystemd-dev \
                   libdtkgui-dev libdtkwidget-dev libdtkdeclarative-dev clang qtmultimedia5-dev
