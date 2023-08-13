@@ -13,5 +13,6 @@ jobs:
         run: |
               ls -al
               pwd
-              
+              cd ../
+              ls -al
   
