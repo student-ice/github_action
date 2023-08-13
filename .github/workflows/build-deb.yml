@@ -5,65 +5,67 @@ jobs:
     build: 
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout dtkcore
-              uses: actions/checkout@v3
-              with: 
-                repository: linuxdeepin/dtkcore
+            - name: Install dependency
+              run: sudo apt install libdtkcore-dev libdtkgui-dev libdtkwidget-dev libdtkdeclarative-dev
+            # - name: Checkout dtkcore
+            #   uses: actions/checkout@v3
+            #   with: 
+            #     repository: linuxdeepin/dtkcore
                 
-            - name: Build and Install dtkcommon
-              run: |
-                  git clone -b 5.6.12 https://github.com/linuxdeepin/dtkcommon.git
-                  cd dtkcommon
-                  sudo apt build-dep .
-                  cmake -B build
-                  cmake --build build -j $(nproc)
-                  sudo dpkg-buildpackage -us -uc -b
-                  cd ../
-                  sudo apt install ./*.deb
+            # - name: Build and Install dtkcommon
+            #   run: |
+            #       git clone -b 5.6.12 https://github.com/linuxdeepin/dtkcommon.git
+            #       cd dtkcommon
+            #       sudo apt build-dep .
+            #       cmake -B build
+            #       cmake --build build -j $(nproc)
+            #       sudo dpkg-buildpackage -us -uc -b
+            #       cd ../
+            #       sudo apt install ./*.deb
                   
-            - name: Build and Install dtkcore
-              run: |
-                  git clone -b 5.6.13 https://github.com/linuxdeepin/dtkcore.git
-                  cd dtkcore
-                  sudo apt build-dep .
-                  cmake -B build
-                  cmake --build build -j $(nproc)
-                  sudo dpkg-buildpackage -us -uc -b
-                  cd ../
-                  sudo apt install ./*.deb
+            # - name: Build and Install dtkcore
+            #   run: |
+            #       git clone -b 5.6.13 https://github.com/linuxdeepin/dtkcore.git
+            #       cd dtkcore
+            #       sudo apt build-dep .
+            #       cmake -B build
+            #       cmake --build build -j $(nproc)
+            #       sudo dpkg-buildpackage -us -uc -b
+            #       cd ../
+            #       sudo apt install ./*.deb
 
-            - name: Build and Install dtkgui
-              run: |
-                  git clone -b 5.6.12 https://github.com/linuxdeepin/dtkgui.git
-                  cd dtkgui
-                  sudo apt build-dep .
-                  cmake -B build
-                  cmake --build build -j $(nproc)
-                  sudo dpkg-buildpackage -us -uc -b
-                  cd ../
-                  sudo apt install ./*.deb
+            # - name: Build and Install dtkgui
+            #   run: |
+            #       git clone -b 5.6.12 https://github.com/linuxdeepin/dtkgui.git
+            #       cd dtkgui
+            #       sudo apt build-dep .
+            #       cmake -B build
+            #       cmake --build build -j $(nproc)
+            #       sudo dpkg-buildpackage -us -uc -b
+            #       cd ../
+            #       sudo apt install ./*.deb
                   
-            - name: Build and Install dtkwidget
-              run: |
-                  git clone -b 5.6.13 https://github.com/linuxdeepin/dtkwidget.git
-                  cd dtkwidget
-                  sudo apt build-dep .
-                  cmake -B build
-                  cmake --build build -j $(nproc)
-                  sudo dpkg-buildpackage -us -uc -b
-                  cd ../
-                  sudo apt install ./*.deb
+            # - name: Build and Install dtkwidget
+            #   run: |
+            #       git clone -b 5.6.13 https://github.com/linuxdeepin/dtkwidget.git
+            #       cd dtkwidget
+            #       sudo apt build-dep .
+            #       cmake -B build
+            #       cmake --build build -j $(nproc)
+            #       sudo dpkg-buildpackage -us -uc -b
+            #       cd ../
+            #       sudo apt install ./*.deb
 
-            - name: Build and Install dtkdeclarative
-              run: |
-                  git clone -b 5.6.10 https://github.com/linuxdeepin/dtkdeclarative.git
-                  cd dtkdeclarative
-                  sudo apt build-dep .
-                  cmake -B build
-                  cmake --build build -j $(nproc)
-                  sudo dpkg-buildpackage -us -uc -b
-                  cd ../
-                  sudo apt install ./*.deb
+            # - name: Build and Install dtkdeclarative
+            #   run: |
+            #       git clone -b 5.6.10 https://github.com/linuxdeepin/dtkdeclarative.git
+            #       cd dtkdeclarative
+            #       sudo apt build-dep .
+            #       cmake -B build
+            #       cmake --build build -j $(nproc)
+            #       sudo dpkg-buildpackage -us -uc -b
+            #       cd ../
+            #       sudo apt install ./*.deb
 
             - name: clone music-hub code
               run: |
