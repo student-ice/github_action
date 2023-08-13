@@ -14,3 +14,8 @@ jobs:
               run: |
                     sudo cat /etc/apt/sources.list
                     sudo cat /etc/apt/sources.list.d/deepin-unstable-source.list
+
+            - name: Update System
+              run: |
+                  sudo apt update
+                  sudo apt install libdtkcore-dev
