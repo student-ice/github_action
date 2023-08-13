@@ -14,5 +14,5 @@ jobs:
         run: |
               ls -al
               pwd
-              git log
+              
   
