@@ -10,6 +10,7 @@ jobs:
         with: 
             token: ${{ secrets.PRIVATE_TOKEN }}
             path: "music-qml"
+            repository: student-ice/music-qml
       - name: print log
         run: |
               ls -al
