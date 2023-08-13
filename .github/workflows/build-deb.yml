@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Install dependency
-              run: sudo apt install libdtkcore-dev libdtkgui-dev libdtkwidget-dev
+              run: sudo apt install libdtkcore-dev libdtkgui-dev libdtkwidget-dev doxygen
               
             # - name: Build and Install dtkcommon
             #   run: |
