@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Install dependency
-              run: sudo apt install libdtkwidget-dev doxygen
+              run: sudo apt install libdtkwidget-dev doxygen qtmultimedia5-dev
               
             - name: Build and Install dtkcommon
               run: |
