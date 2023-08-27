@@ -12,7 +12,7 @@ jobs:
                     repository: student-ice/digimusic
                 
             - name: Install dependency
-              run: sudo apt install libdtkwidget-dev doxygen qtmultimedia5-dev
+              run: sudo apt install libdtkwidget-dev doxygen qtmultimedia5-dev libfmt9
               
             - name: Build and Install dtkcommon
               run: |
