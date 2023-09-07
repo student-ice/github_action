@@ -5,6 +5,10 @@ on:
     branches:
       - master # 修改为你的主分支名称
 
+permissions: 
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
