@@ -9,6 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages
+      url: student-ice.github.io
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
