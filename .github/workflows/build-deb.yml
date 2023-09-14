@@ -11,8 +11,8 @@ jobs:
                     path: "digimusic"
                     repository: student-ice/melodix
                 
-            - name: Install dependency
-              run: sudo apt install doxygen qtmultimedia5-dev clang gcc g++ gdb
+            # - name: Install dependency
+            #   run: sudo apt install doxygen qtmultimedia5-dev clang gcc g++ gdb
               
             - name: Build and Install dtkcommon
               run: |
