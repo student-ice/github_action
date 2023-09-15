@@ -11,7 +11,7 @@ jobs:
                     repository: student-ice/melodix
 
             - name: Replacement source
-            - run: |
+              run: |
                   echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse\n" | sudo tee /etc/apt/sources.list
                   echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse\n" | sudo tee -a /etc/apt/sources.list
                   echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse\n" | sudo tee -a /etc/apt/sources.list
@@ -52,17 +52,6 @@ jobs:
                   sudo dpkg-buildpackage -us -uc -b
                   cd ../
                   sudo apt install ./*.deb
-                  
-            # - name: Build and Install dtkwidget
-            #   run: |
-            #       git clone -b 5.6.13 https://github.com/linuxdeepin/dtkwidget.git
-            #       cd dtkwidget
-            #       sudo apt build-dep .
-            #       cmake -B build
-            #       cmake --build build -j $(nproc)
-            #       sudo dpkg-buildpackage -us -uc -b
-            #       cd ../
-            #       sudo apt install ./*.deb
             - name: Build and Install dtkdeclarative
               run: |
                   git clone -b 5.6.10 https://github.com/linuxdeepin/dtkdeclarative.git
