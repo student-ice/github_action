@@ -1,5 +1,5 @@
 name: build deb
-run-name: Github Action is building Debian Packages
+run-name: test build dtkcore
 on: [push]
 jobs: 
     build: 
