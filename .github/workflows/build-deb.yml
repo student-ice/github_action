@@ -16,10 +16,10 @@ jobs:
               
             - name: Build and Install dtkcommon
               run: |
-                  sudo echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse\n" > /etc/apt/sources.list
-                  sudo echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse\n" >> /etc/apt/sources.list
-                  sudo echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse\n" >> /etc/apt/sources.list
-                  sudo echo -e "deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse\n" >> /etc/apt/sources.list
+                  sudo sh -c echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse\n" > /etc/apt/sources.list
+                  sudo sh -c echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse\n" >> /etc/apt/sources.list
+                  sudo sh -c echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse\n" >> /etc/apt/sources.list
+                  sudo sh -c echo -e "deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse\n" >> /etc/apt/sources.list
                   sudo apt update
                   git clone -b 5.6.17 https://github.com/linuxdeepin/dtkcommon.git
                   cd dtkcommon
