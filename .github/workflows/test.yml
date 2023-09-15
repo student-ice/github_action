@@ -1,5 +1,4 @@
 name: test
-run-name: test
 on: [push]
 jobs: 
     build: 
