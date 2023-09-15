@@ -19,7 +19,7 @@ jobs:
                   sudo apt update
 
             - name: Install dependency
-              run: sudo apt install libdtkwidget-dev doxygen qtmultimedia5-dev
+              run: sudo apt install libdtkwidget-dev doxygen qtmultimedia5-dev libspdlog-dev
 
             - name: Build and Install dtkcommon
               run: |
