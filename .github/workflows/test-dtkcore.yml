@@ -1,0 +1,38 @@
+name: build deb
+run-name: Github Action is building Debian Packages
+on: [push]
+jobs: 
+    build: 
+        runs-on: ubuntu-22.04
+        steps:
+           - name: Build and Install dtkcommon
+             run: |
+                  echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse\n" | sudo tee /etc/apt/sources.list
+                  echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse\n" | sudo tee -a /etc/apt/sources.list
+                  echo -e "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse\n" | sudo tee -a /etc/apt/sources.list
+                  echo -e "deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse\n" | sudo tee -a /etc/apt/sources.list
+                  sudo apt update
+                  git clone -b 5.6.17 https://github.com/linuxdeepin/dtkcommon.git
+                  cd dtkcommon
+                  sudo apt build-dep .
+                  cmake -B build
+                  cmake --build build -j $(nproc)
+                  sudo dpkg-buildpackage -us -uc -b
+                  cd ../
+                  sudo apt install ./*.deb
+                  
+           - name: Build and Install dtkcore
+             env:
+                GH_TOKEN: ${{ github.token }}
+             run: |
+                  git clone -b 5.6.17 https://github.com/linuxdeepin/dtkcore.git
+                  cd dtkcore
+                  gh pr checkout 376
+                  sudo apt build-dep .
+                  cmake -B build
+                  cmake --build build -j $(nproc)
+                  sudo dpkg-buildpackage -us -uc -b
+                  cd ../
+                  sudo apt install ./*.deb
+                  
+            
