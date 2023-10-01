@@ -16,4 +16,4 @@ jobs:
         dst: gitee/student-ice
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
-        static_list: "github_action"
+        static_list: "melodix"
